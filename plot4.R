@@ -10,10 +10,8 @@ png(file="plot4.png",width=480,height=480,bg="transparent")
 ## Create an array of figures
 par(mfcol=c(2,2))
 
-## Construct the 1st plot without the data in the PNG device with the required options to look like the examples
-plot(data$DateTime,data$Global_active_power,type="n",xlab="",ylab="Global Active Power")
-## Add the data lines
-lines(data$DateTime,data$Global_active_power)
+## Construct the 1st plot in the PNG device with the required options to look like the examples
+plot(data$DateTime,data$Global_active_power,type="l",xlab="",ylab="Global Active Power")
 
 ## Construct the 2nd plot without the data in the PNG device with the required options to look like the examples
 plot(data$DateTime,data$Sub_metering_1,type="n",xlab="",ylab="Energy sub metering")
@@ -24,15 +22,11 @@ lines(data$DateTime,data$Sub_metering_3,col="blue")
 ## Add the legend
 legend("topright",col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty=c(1,1),bty="n")
 
-## Construct the 3rd plot without the data in the PNG device with the required options to look like the examples
-plot(data$DateTime,data$Voltage,type="n",xlab="datetime",ylab="Voltage")
-## Add the data lines
-lines(data$DateTime,data$Voltage)
+## Construct the 3rd plot in the PNG device with the required options to look like the examples
+plot(data$DateTime,data$Voltage,type="l",xlab="datetime",ylab="Voltage")
 
-## Construct the 4th plot without the data in the PNG device with the required options to look like the examples
-plot(data$DateTime,data$Global_reactive_power,type="n",xlab="datetime",ylab="Global_reactive_power")
-## Add the data lines
-lines(data$DateTime,data$Global_reactive_power)
+## Construct the 4th plot in the PNG device with the required options to look like the examples
+plot(data$DateTime,data$Global_reactive_power,type="l",xlab="datetime",ylab="Global_reactive_power")
 
 ## Close the PNG device and create the file
 dev.off()
